@@ -1,0 +1,23 @@
+{
+  "queuers": [
+    {
+      "id": "24b9855e-20a8-404b-b62c-6ba5e851f3c3",
+      "username": "jimhahn",
+      "email": "jimhahn@illinois.edu",
+      "status": "14.9 min",
+      "requestDate": "2017-12-29T16:58:47Z",
+      "active": true,
+      "waitlistId": "c760b623-9490-476a-bad1-c8739100e27b"
+    },
+    {
+      "id": "6f970576-3994-4d25-8d76-346ac67840ae",
+      "username": "bsryckm2",
+      "email": "bsryckm2@illinois.edu",
+      "status": "14.9 min",
+      "requestDate": "2017-12-29T16:58:47Z",
+      "active": true,
+      "waitlistId": "c760b623-9490-476a-bad1-c8739100e27b"
+    }
+  ],
+  "totalRecords": 2
+}

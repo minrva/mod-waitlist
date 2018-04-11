@@ -1,0 +1,35 @@
+{
+  "id": "${artifactId}-${version}",
+  "name": "Waitlist Module",
+  "provides": [ {
+    "id": "waitlist",
+    "version": "1.0",
+    "handlers": [ {
+      "methods": [ "GET", "POST" ],
+      "pathPattern": "/waitlists"
+    }, {
+      "methods": [ "GET", "PUT" ],
+      "pathPattern": "/waitlists/{id}"
+    }, {
+      "methods": [ "GET", "POST" ],
+      "pathPattern": "/queuers"
+    }, {
+      "methods": [ "GET" ],
+      "pathPattern": "/courses"
+    }, {
+      "methods": [ "GET" ],
+      "pathPattern": "/instructors"
+    }, {
+      "methods": [ "GET" ],
+      "pathPattern": "/reserves"
+    } ]
+  }, {
+    "id": "_tenant",
+    "version": "1.0",
+    "interfaceType" : "system",
+    "handlers" : [ {
+      "methods" : [ "POST", "DELETE" ],
+      "pathPattern" : "/_/tenant"
+    } ]
+  } ]
+}

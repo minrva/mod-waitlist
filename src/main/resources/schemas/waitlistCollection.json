@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "waitlists": {
+            "type": "array",
+            "id": "waitlistData",
+            "items": {
+                "type": "object",
+                "$ref": "waitlist"
+            }
+        },
+        "totalRecords": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "waitlists",
+        "totalRecords"
+    ]
+}

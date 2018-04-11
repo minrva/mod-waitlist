@@ -1,0 +1,42 @@
+#%RAML 0.8
+title: Queuers
+version: v1.0.0
+baseUri: http://github.com/org/folio/mod-waitlist
+
+documentation:
+  - title: mod-waitlist Queuers API
+    content: This documents the API calls that can be made to query and manage queuers.
+
+schemas: 
+  - queuer: !include schemas/queuer.json
+  - queuerCollection: !include schemas/queuerCollection.json
+  - errors: !include raml-util/schemas/errors.schema
+  - error: !include raml-util/schemas/error.schema
+  - parameters: !include raml-util/schemas/parameters.schema
+
+traits:
+  - secured: !include raml-util/traits/auth.raml
+  - orderable: !include raml-util/traits/orderable.raml
+  - pageable: !include raml-util/traits/pageable.raml
+  - searchable: !include raml-util/traits/searchable.raml
+  - language: !include raml-util/traits/language.raml
+  - validate: !include raml-util/traits/validation.raml
+
+resourceTypes:
+  - collection: !include raml-util/rtypes/collection.raml
+
+/queuers:
+  type:
+    collection:
+      exampleCollection: !include examples/queuerCollection.json
+      exampleItem: !include examples/queuer.json
+      schemaCollection: queuerCollection
+      schemaItem: queuer
+  get:
+    is: [
+      searchable: {description: "with valid searchable fields", example: "waitlistId=c760b623-9490-476a-bad1-c8739100e27b"},
+      pageable
+    ]
+    description: Returns a list of queuers.
+  post:
+    description: Posts a queuer.

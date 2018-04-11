@@ -1,0 +1,30 @@
+{
+    "srvcId": "${artifactId}-${version}",
+    "nodeId": "10.0.2.15",
+    "descriptor": {
+        "dockerImage": "mod-waitlist",
+        "env": [
+            {
+                "name": "db.host",
+                "value": "10.0.2.15"
+            },
+            {
+                "name": "db.port",
+                "value": "5432"
+            },
+            {
+                "name": "db.username",
+                "value": "folio_admin"
+            },
+            {
+                "name": "db.password",
+                "value": "folio_admin"
+            },
+            {
+                "name": "db.database",
+                "value": "okapi_modules"
+            }
+        ],
+        "dockerPull": false
+    }
+}

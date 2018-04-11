@@ -1,0 +1,48 @@
+#%RAML 0.8
+title: Waitlists
+version: v1.0.0
+baseUri: http://github.com/org/folio/mod-waitlist
+
+documentation:
+  - title: mod-waitlist Waitlists API
+    content: This documents the API calls that can be made to query and manage waitlists.
+
+schemas: 
+  - waitlist: !include schemas/waitlist.json
+  - waitlistCollection: !include schemas/waitlistCollection.json
+  - errors: !include raml-util/schemas/errors.schema
+  - error: !include raml-util/schemas/error.schema
+  - parameters: !include raml-util/schemas/parameters.schema
+
+traits:
+  - secured: !include raml-util/traits/auth.raml
+  - orderable: !include raml-util/traits/orderable.raml
+  - pageable: !include raml-util/traits/pageable.raml
+  - searchable: !include raml-util/traits/searchable.raml
+  - language: !include raml-util/traits/language.raml
+  - validate: !include raml-util/traits/validation.raml
+
+resourceTypes:
+  - collection: !include raml-util/rtypes/collection.raml
+  - collection-item: !include raml-util/rtypes/item-collection.raml
+
+/waitlists:
+  type:
+    collection:
+      exampleCollection: !include examples/waitlistCollection.json
+      exampleItem: !include examples/waitlist.json
+      schemaCollection: waitlistCollection
+      schemaItem: waitlist
+  get:
+    is: [
+      searchable: {description: "with valid searchable fields", example: "title=aaa"},
+      pageable
+    ]
+    description: Returns a list of waitlists.
+  post:
+    description: Posts a waitlist.
+  /{waitlistId}:
+    type:
+      collection-item:
+        exampleItem: !include examples/waitlist.json
+        schema: waitlist

@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "queuers": {
+            "type": "array",
+            "id": "queuerData",
+            "items": {
+                "type": "object",
+                "$ref": "queuer"
+            }
+        },
+        "totalRecords": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "queuers",
+        "totalRecords"
+    ]
+}

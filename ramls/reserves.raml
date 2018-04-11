@@ -1,0 +1,42 @@
+#%RAML 0.8
+title: Reserves
+version: v1.0.0
+baseUri: http://github.com/org/folio/mod-waitlist
+
+documentation:
+  - title: mod-waitlist Reserves API
+    content: This documents the API calls that can be made to query and manage reserved items.
+
+schemas: 
+  - item: !include schemas/item.json
+  - itemCollection: !include schemas/itemCollection.json
+  - errors: !include raml-util/schemas/errors.schema
+  - error: !include raml-util/schemas/error.schema
+  - parameters: !include raml-util/schemas/parameters.schema
+
+traits:
+  - secured: !include raml-util/traits/auth.raml
+  - orderable: !include raml-util/traits/orderable.raml
+  - pageable: !include raml-util/traits/pageable.raml
+  - searchable: !include raml-util/traits/searchable.raml
+  - language: !include raml-util/traits/language.raml
+  - validate: !include raml-util/traits/validation.raml
+
+resourceTypes:
+  - collection: !include raml-util/rtypes/collection.raml
+
+/reserves:
+  type:
+    collection:
+      exampleCollection: !include examples/itemCollection.json
+      exampleItem: !include examples/item.json
+      schemaCollection: itemCollection
+      schemaItem: item
+  get:
+    is: [
+      searchable: {description: "with valid searchable fields", example: "title=aaa"},
+      pageable
+    ]
+    description: Returns a list of reserved items.
+  post:
+    description: Posts a reserved item.

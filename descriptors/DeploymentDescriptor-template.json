@@ -1,0 +1,7 @@
+{
+  "srvcId": "${artifactId}-${version}",
+  "nodeId": "10.0.2.15",
+  "descriptor": {
+    "exec": "java -jar bl/mod-waitlist/target/mod-waitlist-fat.jar -Dhttp.port=%p embed_postgres=true"
+  }
+}

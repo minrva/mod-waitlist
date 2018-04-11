@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "f0d902f8-71dc-4766-a866-6f40c7178eab",
+      "instructorId": "965797f0-1f3e-4c9c-a95e-d30b33390db3",
+      "title": "Paul Scholes",
+      "courseId": "33f57ef9-0644-4828-b264-b56a669afd9c",
+      "barcode": "4821747599552",
+      "course": "ACCY:451:Advanced Income Tax Problems",
+      "location": "Main Library",
+      "instructor": "Allen, Leslie"
+    },
+    {
+      "id": "d372fad7-b9c7-41e2-af7b-887f13f5f5ff",
+      "instructorId": "cb7c3029-c16e-4460-854a-4d676a2d1bcf",
+      "title": "Stephenie Meyer",
+      "courseId": "ed698842-16a0-4e95-aeac-0581da2f1a7f",
+      "barcode": "9111905674967",
+      "course": "ACCY:500:Atg Measuremnt, Rpting & Cntrl",
+      "location": "Main Library",
+      "instructor": "Allen, Robert (Pat)"
+    }
+  ],
+  "totalRecords": 2
+}

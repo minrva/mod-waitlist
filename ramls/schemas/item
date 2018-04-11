@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Item Schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "instructorId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "courseId": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "course": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "instructor": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "instructorId",
+    "title",
+    "courseId",
+    "barcode",
+    "course",
+    "location",
+    "instructor"
+  ]
+}

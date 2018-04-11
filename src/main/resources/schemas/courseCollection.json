@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "courses": {
+            "type": "array",
+            "id": "courseData",
+            "items": {
+                "type": "object",
+                "$ref": "course"
+            }
+        },
+        "totalRecords": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "courses",
+        "totalRecords"
+    ]
+}

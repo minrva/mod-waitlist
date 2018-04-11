@@ -1,0 +1,42 @@
+#%RAML 0.8
+title: Courses
+version: v1.0.0
+baseUri: http://github.com/org/folio/mod-waitlist
+
+documentation:
+  - title: mod-waitlist Courses API
+    content: This documents the API calls that can be made to query and manage courses.
+
+schemas: 
+  - course: !include schemas/course.json
+  - courseCollection: !include schemas/courseCollection.json
+  - errors: !include raml-util/schemas/errors.schema
+  - error: !include raml-util/schemas/error.schema
+  - parameters: !include raml-util/schemas/parameters.schema
+
+traits:
+  - secured: !include raml-util/traits/auth.raml
+  - orderable: !include raml-util/traits/orderable.raml
+  - pageable: !include raml-util/traits/pageable.raml
+  - searchable: !include raml-util/traits/searchable.raml
+  - language: !include raml-util/traits/language.raml
+  - validate: !include raml-util/traits/validation.raml
+
+resourceTypes:
+  - collection: !include raml-util/rtypes/collection.raml
+
+/courses:
+  type:
+    collection:
+      exampleCollection: !include examples/courseCollection.json
+      exampleItem: !include examples/course.json
+      schemaCollection: courseCollection
+      schemaItem: course
+  get:
+    is: [
+      searchable: {description: "with valid searchable fields", example: "name=aaa"},
+      pageable
+    ]
+    description: Returns a list of courses.
+  post:
+    description: Posts a course.

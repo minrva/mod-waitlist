@@ -1,0 +1,13 @@
+{
+  "courses": [
+    {
+      "id": "33f57ef9-0644-4828-b264-b56a669afd9c",
+      "name": "ADV:482:Qualitative Analysis in Advertising"
+    },
+    {
+      "id": "ed698842-16a0-4e95-aeac-0581da2f1a7f",
+      "name": "ADV:483:Audience Analysis"
+    }
+  ],
+  "totalRecords": 2
+}
